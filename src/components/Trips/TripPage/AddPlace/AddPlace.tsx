@@ -8,6 +8,7 @@ import { Place, selectTripById, updateTrip } from '../../../../features/trips/tr
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../../../store/store';
 import { calculateRoutes } from '../../../../utils/geoapify';
+import { addSeconds } from 'date-fns';
 
 
 
@@ -42,7 +43,16 @@ const AddPlace  = (props: any) => {
                 const coordinates = places.map(place => place.coordinates) 
                 const res = await calculateRoutes(coordinates);
                 const route = JSON.stringify(res);
-                dispatch(updateTrip({...trip, route, places, numOfPlaces: places.length}));
+                if (places[places.length - 2].departureDate) {
+                    const legs = res.features[0].properties.legs
+                    const travelTime = legs[legs.length-1].time
+                    const arrivalDate = addSeconds(new Date(places[places.length - 2].departureDate), travelTime).toLocaleString();
+                    places[places.length - 1] = {...newPlace, arrivalDate, departureDate: arrivalDate}
+                    dispatch(updateTrip({...trip, route, places, numOfPlaces: places.length}))
+                }
+                else {
+                    dispatch(updateTrip({...trip, route, places, numOfPlaces: places.length}))
+                };
             }
             else {
                 dispatch(updateTrip( { ...trip,  places, numOfPlaces: places.length}))

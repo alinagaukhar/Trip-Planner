@@ -7,7 +7,7 @@ import marker from '../../assets/marker.svg';
 export const addRoute = async(map: Map, routeResult: any) => {
     
     const waypoints = routeResult.features[0].properties.waypoints;
-    
+    console.log(routeResult)
     map.addSource('route', {
         type: 'geojson',
         data: routeResult
@@ -30,12 +30,14 @@ export const addRoute = async(map: Map, routeResult: any) => {
       });
     
   
-    waypoints.map((point:any) => {
+    waypoints.map((point:any, index: number) => {
       
-      // let el = document.createElement('div');
-      // el.className = 'marker';
-      // el.innerHTML = 'A';
-      new maplibre.Marker()
+      let el = document.createElement('div');
+      el.className = 'marker';
+      el.innerHTML = `<p>${String.fromCharCode(65 + index)}</p>`;
+      new maplibre.Marker(el, {
+        anchor: 'bottom'
+      })
       .setLngLat(point.location)
       .addTo(map);  
     })

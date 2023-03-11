@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import "maplibre-gl/dist/maplibre-gl.css";
 import store from './store/store';
 import { Provider } from 'react-redux'
@@ -14,9 +14,11 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    {/* <BrowserRouter> */}
+      <HashRouter basename="/">
+        <App />
+      </HashRouter>
+    {/* </BrowserRouter> */}
   </Provider>
   // </React.StrictMode>
 );

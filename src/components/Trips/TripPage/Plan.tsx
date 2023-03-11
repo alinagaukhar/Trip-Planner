@@ -6,12 +6,11 @@ import Empty from './Empty';
 import AddPlace from './AddPlace/AddPlace';
 import { useState } from 'react';
 import PlacePage from './PlacePage';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
-import { selectTripById } from '../../../features/trips/tripsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../../store/store';
+import { selectTripById, updateTrip } from '../../../features/trips/tripsSlice';
 import SelectTime from '../SelectTime/SelectTime';
 import RemovePlace from './RemovePlace/RemovePlace';
-
 
 const Plan = (props : any) => {
     const [showAddPlace, setShowAddPlace] = useState<boolean>(false);
@@ -19,15 +18,25 @@ const Plan = (props : any) => {
     const [showDelete, setShowDelete] = useState<boolean>(false);
     const [removePlace, setRemovePlace] = useState(null);
     const [editTimePlace, setEditTimePlace] = useState(null);
-
+    const dispatch = useDispatch<AppDispatch>();
     const trip = useSelector((state: RootState) => selectTripById(state, props.tripId));
     
+    const resetHandler = () => {
+        if (trip) {
+            let places = [...trip.places];
+            for (let i = 0; i < places.length; i++) {
+                places[i] = {...places[i], arrivalDate: '', departureDate: ''}
+            }
+            dispatch(updateTrip({...trip, places}))
+        }
+    }
+
     return (
         <div id='plan-container' >
             <header id='plan-header'>
                 <h1>Plan</h1>
                 <div className='buttons'>
-                    <Button text='Reset' id='reset' src={filledX}/>
+                    <Button text='Reset' id='reset' src={filledX} onClick={resetHandler}/>
                     <Button text='Add place' id='addPlace' src={plus} onClick={() => {setShowAddPlace(true)}}/>
                 </div>
             </header>
