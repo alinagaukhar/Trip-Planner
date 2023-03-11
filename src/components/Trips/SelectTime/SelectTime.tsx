@@ -33,7 +33,7 @@ const SelectTime  = (props: any) => {
             let places = [...trip.places];
             
             places[props.index] = {...places[props.index], departureDate}
-            //update without checking arrival times
+
             let departure = date;
             for (let i = props.index; i < places.length - 1; i++){
                 const time = route[i].time;

@@ -2,7 +2,7 @@
   "name": "trip-planner-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://alinagaukhar.github.io/Trip-Planner/",
+  "homepage": "https://alinagaukhar.github.io/",
   "dependencies": {
     "@chakra-ui/react": "^2.5.1",
     "@emotion/react": "^11.10.6",
