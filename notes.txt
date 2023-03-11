@@ -1,0 +1,41 @@
+Notes:
+
+- change edited date
+-  Map.tsx is written bad
+- fetch functions miss catching error properly
+- we need to remove map icons and layers
+- tab when not clicked not white
+
+
+
+To-do
+
+1) places
+
+    integrating with route:
+    
+    - polish deleteplace container
+    - if some point is deleted need to change timing appearence ??
+
+2) Routes:
+    - display order beatifully
+
+3) Departure dates
+    - validate time (date should not be erlier than arrival time, time should be picked)
+    - when date is set for one place we need to calculate arrival dates for the next place/s?
+    - when place added need to calculate time
+    - reset functionality
+
+4) verstka auth page
+5) polish code 
+    - add proper error handling and types
+
+
+More features
+
+* add to-dos
+* add place in the middle
+* change trip orders
+* add places photos
+* add categoris
+* add loading 

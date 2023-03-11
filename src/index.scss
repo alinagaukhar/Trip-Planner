@@ -1,0 +1,45 @@
+/* @import '~maplibre-gl/dist/maplibre-gl.css'; */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import './variables.scss';
+
+#root {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.btn {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $theme-dark-violet;
+  border-radius: 3px;
+  color: $theme-dark-violet;
+  display: flex;
+  width: 90px;
+  height: 25px;
+  font-size: 9px;
+  align-items: center;
+  font-weight: 500;
+
+}
+
+.btn:hover {
+  cursor: pointer;
+  box-shadow: 3px 5px 5px rgb(174, 173, 173);
+}
+
+button:hover {
+  cursor: pointer;
+}

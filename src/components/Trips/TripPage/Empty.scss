@@ -1,0 +1,20 @@
+@import '../../../variables.scss';
+
+
+img {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+}
+
+p {
+    width: 100%;
+    text-align: center;
+    color: $theme-dark-violet;
+    margin: 20px auto;
+}
+
+#addPlaceBtn {
+    margin: 10px auto;
+}
+

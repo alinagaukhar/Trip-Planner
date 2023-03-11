@@ -1,0 +1,57 @@
+@import '../../variables'; 
+
+.empty-trips-container {
+    width: 700px;
+    height: 100%;
+    background-color: $theme-grayish-violet;
+    padding: 20px;
+    color: $theme-dark-violet;
+    header {
+        display: flex;
+        justify-content: space-between;
+        height: 60px;
+        align-items: center;
+
+        h2 {
+            color: $theme-dark-violet;
+            font-size: 22px;
+            letter-spacing: 0cm;
+            font-weight: 600;
+        }
+    }
+
+    #carImg {
+        width: 130px;
+        height: 130px;
+        fill: $theme-dark-violet;
+        margin: 40px auto 20px auto;
+        align-self: center;
+    }
+
+    .content {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        #createTrip {
+            width: 120px;
+            margin: 10px auto;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 550;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 40px;
+            font-size: 22px;
+            font-weight: 600;
+            color: $dark-gray;
+        }
+
+        .attribute {
+            color: $dark-gray;
+        }
+    }
+}

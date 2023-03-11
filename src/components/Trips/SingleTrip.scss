@@ -1,0 +1,90 @@
+@import '../../variables';
+
+
+#trip-container {
+    width: 400px;
+    height: 150px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: $theme-dark-violet;
+    background-color: white;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+
+    #places {
+        width: 20%;
+        background-color: $theme-dark-violet;
+        color: $theme-grayish-violet;
+        font-weight: 600;
+        text-align: center;
+        p {
+            font-size: 44px;
+            width: 100%;
+            margin: 0 auto;
+            color: white;
+            font-weight: 500;
+            margin: 0;
+        }
+        }
+
+    .trip-content {
+        color: $dark-gray;
+        width: 80%;
+        font-size: 16px;
+        font-weight: 600;
+        header {
+            display: flex;
+            flex-direction: row;
+            padding-left: 10px;
+            padding-right: 10px;
+            justify-content: space-between;
+
+            p {
+                text-align: left;
+                color: $dark-gray;
+            }
+
+            span {
+                width: 30%;
+                button {
+                    background: none;
+                    border: none;
+                    margin-right: 5px;
+                    img {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+        .open {
+            width: 100%;
+            background-color: $theme-grayish-violet;
+            text-align: left;
+            .link {
+                margin-left: 10%;
+                text-decoration: none;
+                background: none;
+                border: none;
+                text-decoration: underline;
+                color: $dark-gray;
+                font-size: 14px;
+            }
+        }
+
+        .editted {
+            position: relative;
+            width: 100%;
+            margin-top: 30px;
+            span {
+                font-size: 12px;
+                position: absolute;
+                right: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+}

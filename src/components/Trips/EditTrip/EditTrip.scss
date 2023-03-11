@@ -1,0 +1,119 @@
+@import '../../../variables';
+
+
+    
+    .edit-trip-container {
+        background-color: white;
+        border-radius: 5px;
+        margin-top: 20%;
+        width: 100%;
+        height: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow:  5px 5px 15px rgb(174, 173, 173);
+        position: relative;
+        header {
+            border-radius: 5px 5px 0 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 0;
+            // align-items: center;
+            background-image: linear-gradient(to right, #525CC2 , #1727CE);
+            height: 40px;
+            padding: 10px;
+
+            button {
+                background: none;
+                border: none;
+                #x-img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+
+            button:hover {
+                cursor: pointer;
+            }
+
+            #plus-img {
+                width: 30px;
+                height: 30px;
+                margin: 0;
+                svg {
+                    fill: white;
+                    color: white;
+                }
+                fill: white;
+                color: white;
+            }
+
+            h1 {
+                font-size: 20px;
+                color: white;
+                font-weight: 600;
+                text-align: left;
+            }
+        }
+
+        .content {
+            
+            padding-top: 10%;
+            
+
+            p {
+                font-size: 16px;
+                font-weight: 600;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 10px;
+                width: 90%;
+                color: $dark-gray;
+                text-align: left;
+            }
+
+            input {
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+                height: 40px;
+                font-size: 16px;
+                border-width: 1px;
+                border-radius: 5px;
+                box-shadow:  0.3px 0.3px 5px #AFAFB0 inset;
+                padding: 5px;
+                color: $dark-gray;
+
+            }
+        }
+        footer {
+            display: flex;
+            flex-direction: row;
+            background-color: $theme-grayish-violet;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+
+            #cancel {
+                background: none;
+                border: none;
+                font-size: 14px;
+                color: $theme-dark-violet;
+                font-weight: 500;
+            }
+
+            #cancel:hover{
+                cursor: pointer;
+            }
+
+            #editTripLarge {
+                width: 160px;
+                height: 30px;
+                font-weight: 500;
+            }
+        }
+}
