@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Trip-Planner/static/css/main.9f99559c.css",
-    "main.js": "/Trip-Planner/static/js/main.788b5b43.js",
+    "main.css": "/Trip-Planner/static/css/main.33a23a24.css",
+    "main.js": "/Trip-Planner/static/js/main.f4eb4151.js",
     "static/js/787.7be0dc1c.chunk.js": "/Trip-Planner/static/js/787.7be0dc1c.chunk.js",
     "static/media/calendar.svg": "/Trip-Planner/static/media/calendar.be92322c994cc792aca45f1fdfdb55db.svg",
     "static/media/wallet.svg": "/Trip-Planner/static/media/wallet.21f3f6bef528f21d581f3db052f9392a.svg",
@@ -14,13 +14,14 @@
     "static/media/plus-white.svg": "/Trip-Planner/static/media/plus-white.05b8826396f790f3b0701080bcad264b.svg",
     "static/media/marker.svg": "/Trip-Planner/static/media/marker.3abf1ef1d66aa3c19b70.svg",
     "static/media/edit.svg": "/Trip-Planner/static/media/edit.0958eed8bbea18080cb7a6c549307f3c.svg",
+    "static/media/arrow.svg": "/Trip-Planner/static/media/arrow.729cb54b5c9c084392bf887b50d06074.svg",
     "static/media/x.svg": "/Trip-Planner/static/media/x.b2af6f834a3cc3dc34cf2bfb1d3b5c07.svg",
-    "main.9f99559c.css.map": "/Trip-Planner/static/css/main.9f99559c.css.map",
-    "main.788b5b43.js.map": "/Trip-Planner/static/js/main.788b5b43.js.map",
+    "main.33a23a24.css.map": "/Trip-Planner/static/css/main.33a23a24.css.map",
+    "main.f4eb4151.js.map": "/Trip-Planner/static/js/main.f4eb4151.js.map",
     "787.7be0dc1c.chunk.js.map": "/Trip-Planner/static/js/787.7be0dc1c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9f99559c.css",
-    "static/js/main.788b5b43.js"
+    "static/css/main.33a23a24.css",
+    "static/js/main.f4eb4151.js"
   ]
 }
