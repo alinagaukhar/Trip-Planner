@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Trip Planning App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live site
+
+https://alinagaukhar.github.io/Trip-Planner/
 
 ## Available Scripts
 
