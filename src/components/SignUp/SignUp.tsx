@@ -1,10 +1,9 @@
-import * as ReactDOM from 'react-dom';
-import { Formik, Field, Form, FormikHelpers } from 'formik';
-import { registerWithEmailAndPassword } from '../../utils/auth';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { reset } from '../../features/trips/tripsSlice';
-
+import { Formik, Field, Form, FormikHelpers } from "formik";
+import { registerWithEmailAndPassword } from "../../utils/auth";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { reset } from "../../features/trips/tripsSlice";
+import { AppDispatch } from "../../store/store";
 
 interface Values {
   email: string;
@@ -13,30 +12,28 @@ interface Values {
 
 const Signup = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
+  const dispatch = useDispatch<AppDispatch>();
 
   return (
     <div>
       <h1>Happy to have you here, Create an account</h1>
       <Formik
         initialValues={{
-          email: '',
-          password: '',
+          email: "",
+          password: "",
         }}
-        onSubmit={async(
+        onSubmit={async (
           values: Values,
           { setSubmitting }: FormikHelpers<Values>
         ) => {
           setSubmitting(true);
-          await registerWithEmailAndPassword(values.email, values.password)
+          await registerWithEmailAndPassword(values.email, values.password);
           setSubmitting(false);
           dispatch(reset());
-          navigate('/welcome');
+          navigate("/welcome");
         }}
       >
         <Form>
-           
           <label htmlFor="email">Email</label>
           <Field
             id="email"
@@ -46,11 +43,8 @@ const Signup = () => {
           />
 
           <label htmlFor="password">Password</label>
-          <Field 
-            id="password" 
-            name="password" 
-            type='password'/>
-          
+          <Field id="password" name="password" type="password" />
+
           <button type="submit">Submit</button>
         </Form>
       </Formik>
@@ -58,5 +52,4 @@ const Signup = () => {
   );
 };
 
-
-export default Signup
+export default Signup;

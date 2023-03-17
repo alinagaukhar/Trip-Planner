@@ -1,24 +1,24 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 .trips-container {
-    width: 500px;
-    height: 100%;
-    background-color: $theme-grayish-violet;
-    padding: 20px;
-    color: $theme-dark-violet;
-    flex-grow: 0;
-    flex-shrink: 0;
-    header {
-        display: flex;
-        justify-content: space-between;
-        height: 60px;
-        align-items: center;
+  width: 500px;
+  height: 100%;
+  background-color: $theme-grayish-violet;
+  padding: 20px;
+  color: $theme-dark-violet;
+  flex-grow: 0;
+  flex-shrink: 0;
+  header {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
 
-        h2 {
-            color: $theme-dark-violet;
-            font-size: 22px;
-            letter-spacing: 0cm;
-            font-weight: 600;
-        }
+    h2 {
+      color: $theme-dark-violet;
+      font-size: 22px;
+      letter-spacing: 0cm;
+      font-weight: 600;
     }
+  }
 }

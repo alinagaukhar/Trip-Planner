@@ -1,72 +1,70 @@
-@import '../../../variables.scss';
+@import "../../../variables.scss";
 
 .trip-description-container {
-    width: 530px;
-    height: 100%;
-    background-color: $theme-grayish-violet;
-    overflow-y: scroll;
-    flex-grow: 0;
-    flex-shrink: 0;
-    header {
-        height: 200px;
-        background-image: linear-gradient(to right, #914BBC , #3986D5);
+  width: 530px;
+  height: 100%;
+  background-color: $theme-grayish-violet;
+  overflow-y: scroll;
+  flex-grow: 0;
+  flex-shrink: 0;
+  header {
+    height: 200px;
+    background-image: linear-gradient(to right, #914bbc, #3986d5);
 
-        h1 {
-            display: flex;
-            background: none;
-            flex-direction: row;
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-            padding: 25px;
-            img {
-                width: 20px;
-                height: 20px;
-                margin: 0 10px 0 0;
-            }
-        }
+    h1 {
+      display: flex;
+      background: none;
+      flex-direction: row;
+      color: white;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 25px;
+      img {
+        width: 20px;
+        height: 20px;
+        margin: 0 10px 0 0;
+      }
     }
+  }
 
-    #trip-description-content {
-        // height: 500px;
-        .tabs {
-            width: 90%;
-            background-color: transparent;
-            margin: -20% auto;
-                    
-            .singletab {
-                background-color: rgba(0, 0, 0, 0.2);
-                width: 25%;
-                height: 50px;
-                border-radius: 5px 5px 0 0 ;
-                margin-right: 5px;
-                color: white;
-                font-size: 14px;
+  #trip-description-content {
+    // height: 500px;
+    .tabs {
+      width: 90%;
+      background-color: transparent;
+      margin: -20% auto;
 
-                img {
-                    width: 20px;
-                    height: 20px;
-                    margin: 0 5px;
-                }
+      .singletab {
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 25%;
+        height: 50px;
+        border-radius: 5px 5px 0 0;
+        margin-right: 5px;
+        color: white;
+        font-size: 14px;
 
-            }
-            
-
-            .singletab[aria-selected="true"] {
-                background-color: white;
-                color: $theme-dark-violet;
-                font-weight: 700;
-            }
-
-            .tabpanels{
-                background-color: white;
-                // height: 100vh;
-                border-radius: 0 5px;
-
-                .panel {
-                    height: 100%;
-                }
-            }
+        img {
+          width: 20px;
+          height: 20px;
+          margin: 0 5px;
         }
+      }
+
+      .singletab[aria-selected="true"] {
+        background-color: white;
+        color: $theme-dark-violet;
+        font-weight: 700;
+      }
+
+      .tabpanels {
+        background-color: white;
+        // height: 100vh;
+        border-radius: 0 5px;
+
+        .panel {
+          height: 100%;
+        }
+      }
     }
+  }
 }

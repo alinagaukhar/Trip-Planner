@@ -1,33 +1,33 @@
 #plan-container {
-    height: 100%;
-    position: relative;
-    #plan-header {
-        padding: 20px 15px;
-        height: 100px;
-        background: none;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        h1 {
-            font-size: 16px; 
-            font-weight: 500;   
-        }
-
-        .buttons {
-            display: flex;
-            flex-direction: row;
-            width: 50%;
-
-            #reset {
-                font-size: 12px;
-                width: 100px;
-                margin-right: 5px;
-            }
-
-            #addPlace {
-                font-size: 12px;
-                width: 130px;
-            }
-        }
+  height: 100%;
+  position: relative;
+  #plan-header {
+    padding: 20px 15px;
+    height: 100px;
+    background: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    h1 {
+      font-size: 16px;
+      font-weight: 500;
     }
+
+    .buttons {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+
+      #reset {
+        font-size: 12px;
+        width: 100px;
+        margin-right: 5px;
+      }
+
+      #addPlace {
+        font-size: 12px;
+        width: 130px;
+      }
+    }
+  }
 }

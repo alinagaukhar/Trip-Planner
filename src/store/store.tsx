@@ -1,23 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit'
-import tripsreducer from '../features/trips/tripsSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import tripsreducer from "../features/trips/tripsSlice";
 // import devToolsEnhancer from 'remote-redux-devtools';
-import { loadState, saveState } from './localstorage';
+import { loadState, saveState } from "./localstorage";
 
 const persistedState = loadState();
 
 const store = configureStore({
-  preloadedState : persistedState,
+  preloadedState: persistedState,
   reducer: {
-    trips: tripsreducer
+    trips: tripsreducer,
   },
-})
+});
 
 store.subscribe(() => {
-  saveState(store.getState())
-})
+  saveState(store.getState());
+});
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootState = ReturnType<typeof store.getState>;
 
-export type AppDispatch = typeof store.dispatch
+export type AppDispatch = typeof store.dispatch;
 
-export default store
+export default store;

@@ -1,10 +1,9 @@
-
-
 To-do
 
 
 1) Departure dates
     - validate time (date should not be erlier than arrival time, time should be picked)
+    - when place order changes/ place delete need to valudate dates !!!
     - when place is deleted -> need recalculate
 
 2) verstka auth page
@@ -17,6 +16,7 @@ To-do
 4) polish code 
     - add proper error handling and types
     - Map.tsx is written bad
+
     
 
 

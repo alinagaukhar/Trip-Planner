@@ -1,7 +1,7 @@
 /* @import '~maplibre-gl/dist/maplibre-gl.css'; */
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import './variables.scss';
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import "./variables.scss";
 
 #root {
   height: 100vh;
@@ -9,13 +9,13 @@
 
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -32,7 +32,6 @@ code {
   font-size: 9px;
   align-items: center;
   font-weight: 500;
-
 }
 
 .btn:hover {

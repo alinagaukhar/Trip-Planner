@@ -1,10 +1,10 @@
-import * as ReactDOM from 'react-dom';
-import { Formik, Field, Form, FormikHelpers } from 'formik';
-import { logInWithEmailAndPassword } from '../../utils/auth';
-import { useNavigate } from 'react-router-dom';
-import { signInWithGoogle } from '../../utils/auth';
-import { useDispatch } from 'react-redux';
-import { reset } from '../../features/trips/tripsSlice';
+import { Formik, Field, Form, FormikHelpers } from "formik";
+import { logInWithEmailAndPassword } from "../../utils/auth";
+import { useNavigate } from "react-router-dom";
+import { signInWithGoogle } from "../../utils/auth";
+import { useDispatch } from "react-redux";
+import { reset } from "../../features/trips/tripsSlice";
+import { AppDispatch } from "../../store/store";
 
 interface Values {
   email: string;
@@ -13,9 +13,9 @@ interface Values {
 
 const Signin = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
-  const clickHandler = async() => {
+  const clickHandler = async () => {
     await signInWithGoogle();
     dispatch(reset());
     navigate("/main");
@@ -27,22 +27,21 @@ const Signin = () => {
       <button onClick={clickHandler}> Sign in with Google </button>
       <Formik
         initialValues={{
-          email: '',
-          password: '',
+          email: "",
+          password: "",
         }}
-        onSubmit={async(
+        onSubmit={async (
           values: Values,
           { setSubmitting }: FormikHelpers<Values>
         ) => {
           setSubmitting(true);
-          await logInWithEmailAndPassword(values.email, values.password)
+          await logInWithEmailAndPassword(values.email, values.password);
           setSubmitting(false);
           dispatch(reset());
-          navigate('/main');
+          navigate("/main");
         }}
       >
         <Form>
-           
           <label htmlFor="email">Email</label>
           <Field
             id="email"
@@ -52,11 +51,8 @@ const Signin = () => {
           />
 
           <label htmlFor="password">Password</label>
-          <Field 
-            id="password" 
-            name="password" 
-            type='password'/>
-          
+          <Field id="password" name="password" type="password" />
+
           <button type="submit">Submit</button>
         </Form>
       </Formik>
@@ -64,5 +60,4 @@ const Signin = () => {
   );
 };
 
-
-export default Signin
+export default Signin;

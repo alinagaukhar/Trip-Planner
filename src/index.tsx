@@ -1,23 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.scss';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.scss";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import "maplibre-gl/dist/maplibre-gl.css";
-import store from './store/store';
-import { Provider } from 'react-redux'
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   // <React.StrictMode>
   <Provider store={store}>
     {/* <BrowserRouter> */}
-      <HashRouter basename="/">
-        <App />
-      </HashRouter>
+    <HashRouter basename="/">
+      <App />
+    </HashRouter>
     {/* </BrowserRouter> */}
   </Provider>
   // </React.StrictMode>

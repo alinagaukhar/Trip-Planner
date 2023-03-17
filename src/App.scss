@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .main-header {
   border-bottom: solid 2px $theme-dark-violet;
@@ -9,22 +9,22 @@
   align-items: center;
 
   h1 {
-      color: $theme-dark-violet;
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-left: 20px;
+    color: $theme-dark-violet;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-left: 20px;
   }
   button {
-      display: flex;
-      flex-direction: row;
-      color: $theme-dark-violet;
-      font-size: 0.9rem;
-      margin-right: 20px;
-      
-      img {
-          width: 20px;
-          height: 20px;
-          margin: 0 5px 0 0;
-      }
+    display: flex;
+    flex-direction: row;
+    color: $theme-dark-violet;
+    font-size: 0.9rem;
+    margin-right: 20px;
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin: 0 5px 0 0;
+    }
   }
 }

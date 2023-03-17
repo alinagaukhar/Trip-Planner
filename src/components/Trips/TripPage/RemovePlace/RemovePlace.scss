@@ -1,113 +1,108 @@
-@import '../../../../variables.scss';
+@import "../../../../variables.scss";
 
-
-
-    
 #remove-place-container {
-        background-color: white;
-        overflow-x: visible;
-        border-radius: 5px;
-        position: fixed;
-        bottom: 0;
-        width: 500px;
-        height: 250px;
-        margin-left: -30px;
-        box-shadow:  5px 5px 15px rgb(174, 173, 173);
-        
+  background-color: white;
+  overflow-x: visible;
+  border-radius: 5px;
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+  height: 250px;
+  margin-left: -30px;
+  box-shadow: 5px 5px 15px rgb(174, 173, 173);
 
-        header {
-            border-radius: 5px 5px 0 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            background-image: linear-gradient(to right, #525CC2 , #1727CE);
-            height: 40px;
-            padding: 10px;
+  header {
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, #525cc2, #1727ce);
+    height: 40px;
+    padding: 10px;
 
-            button {
-                background: none;
-                border: none;
-                #x-img {
-                    width: 20px;
-                    height: 20px;
-                }
-            }
+    button {
+      background: none;
+      border: none;
+      #x-img {
+        width: 20px;
+        height: 20px;
+      }
+    }
 
-            button:hover {
-                cursor: pointer;
-            }
+    button:hover {
+      cursor: pointer;
+    }
 
-            #plus-img {
-                width: 30px;
-                height: 30px;
-                margin: 0;
-                svg {
-                    fill: white;
-                    color: white;
-                }
-                fill: white;
-                color: white;
-            }
+    #plus-img {
+      width: 30px;
+      height: 30px;
+      margin: 0;
+      svg {
+        fill: white;
+        color: white;
+      }
+      fill: white;
+      color: white;
+    }
 
-            h1 {
-                font-size: 20px;
-                color: white;
-                font-weight: 600;
-                text-align: left;
-            }
-        }
+    h1 {
+      font-size: 20px;
+      color: white;
+      font-weight: 600;
+      text-align: left;
+    }
+  }
 
-        .content {
-           
-            width: 90%;
-            margin: 0 auto;
+  .content {
+    width: 90%;
+    margin: 0 auto;
 
-            p {
-                font-size: 16px;
-                font-weight: 600;
-                display: block;
-                margin: 20px 0;
-                width: 90%;
-                color: $dark-gray;
-                text-align: left;
-            }
+    p {
+      font-size: 16px;
+      font-weight: 600;
+      display: block;
+      margin: 20px 0;
+      width: 90%;
+      color: $dark-gray;
+      text-align: left;
+    }
 
-            h1 {
-                border: 2px solid gray;
-                border-radius: 5px;
-                height: 40px;
-                color: $dark-gray;
-                text-align: center;
-            }
-        }
-        footer {
-            display: flex;
-            flex-direction: row;
-            background-color: $theme-grayish-violet;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            justify-content: space-around;
-            align-items: center;
-            height: 50px;
+    h1 {
+      border: 2px solid gray;
+      border-radius: 5px;
+      height: 40px;
+      color: $dark-gray;
+      text-align: center;
+    }
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    background-color: $theme-grayish-violet;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
 
-            #cancel {
-                background: none;
-                border: none;
-                font-size: 14px;
-                color: $theme-dark-violet;
-                font-weight: 500;
-            }
+    #cancel {
+      background: none;
+      border: none;
+      font-size: 14px;
+      color: $theme-dark-violet;
+      font-weight: 500;
+    }
 
-            #cancel:hover{
-                cursor: pointer;
-            }
+    #cancel:hover {
+      cursor: pointer;
+    }
 
-            #removeTripLarge {
-                width: 160px;
-                height: 30px;
-                font-weight: 500;
-            }
-        }
+    #removeTripLarge {
+      width: 160px;
+      height: 30px;
+      font-weight: 500;
+    }
+  }
 }
