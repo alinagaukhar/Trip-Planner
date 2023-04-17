@@ -12,6 +12,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { LoggedIn } from './contexts/loggedin-context';
 import TripPage from './components/Trips/TripPage/TripPage';
 
+
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<string>('');
 
