@@ -7,7 +7,6 @@ import marker from '../../assets/marker.svg';
 export const addRoute = async(map: Map, routeResult: any) => {
     
     const waypoints = routeResult.features[0].properties.waypoints;
-    console.log(routeResult)
     map.addSource('route', {
         type: 'geojson',
         data: routeResult

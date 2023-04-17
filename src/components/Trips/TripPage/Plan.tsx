@@ -11,6 +11,9 @@ import { AppDispatch, RootState } from '../../../store/store';
 import { selectTripById, updateTrip } from '../../../features/trips/tripsSlice';
 import SelectTime from '../SelectTime/SelectTime';
 import RemovePlace from './RemovePlace/RemovePlace';
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { calculateRoutes } from '../../../utils/geoapify';
+
 
 const Plan = (props : any) => {
     const [showAddPlace, setShowAddPlace] = useState<boolean>(false);
@@ -27,11 +30,49 @@ const Plan = (props : any) => {
             for (let i = 0; i < places.length; i++) {
                 places[i] = {...places[i], arrivalDate: '', departureDate: ''}
             }
-            dispatch(updateTrip({...trip, places}))
+            dispatch(updateTrip({...trip, places, lastEdited: new Date().toLocaleString()}))
         }
     }
 
+    const reorder = async (startIndex: number, endIndex: number) => {
+        if (trip) {
+            let places = [...trip.places];
+            if (startIndex === 0) {
+                places[0] = {...places[0], isStart: false};
+            }
+            const [removed] = places.splice(startIndex, 1);
+            places.splice(endIndex, 0, removed);
+            places[0] = {...places[0], isStart: true};
+            
+            if (places.length > 1) {
+                const coordinates = places.map(place => place.coordinates) 
+                const res = await calculateRoutes(coordinates);
+                const route = JSON.stringify(res);
+                dispatch(updateTrip( { ...trip,  places, route, lastEdited: new Date().toLocaleString()}));
+            }
+            else {
+                dispatch(updateTrip({...trip, places, lastEdited: new Date().toLocaleString()}))
+            }
+        }
+    }
+
+    const onDragEnd = async(result:any) => {
+        // dropped outside the list
+        if (!result.destination) {
+          return;
+        }
+        await reorder(result.source.index, result.destination.index);
+      }
+
     return (
+        <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable droppableId="droppable">
+          {(provided, snapshot) => (
+            <div
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            //   style={getListStyle(snapshot.isDraggingOver)}
+            >
         <div id='plan-container' >
             <header id='plan-header'>
                 <h1>Plan</h1>
@@ -43,19 +84,32 @@ const Plan = (props : any) => {
             {trip?.numOfPlaces === 0 ? 
                 <Empty show={setShowAddPlace} /> : 
                 trip?.places.map( (place, index) => 
+                <Draggable key={index} draggableId={place.name} index={index}>
+                  {(provided, snapshot) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                    >
                     <PlacePage 
-                        key={index} 
+                        
                         index={index} 
                         place={place} 
                         showSelectTime={setShowSelectTime}
                         showDelete={setShowDelete}
                         setRemovePlace={setRemovePlace}
                         setEditTimePlace={setEditTimePlace}/>
+                        </div>
+                        )}
+                    </Draggable>
                         )}
             {showAddPlace ? <AddPlace tripId = {props.tripId} hide={setShowAddPlace}/> : <></>}
             {showSelectTime ? <SelectTime tripId = {props.tripId} index={editTimePlace} hide={setShowSelectTime}/> : <></>}            
             {showDelete ? <RemovePlace index={removePlace} tripId={props.tripId} showDelete={setShowDelete}/> : <></>}
        </div>
+       </div>)}
+       </Droppable>
+       </DragDropContext>
     )
 }
 

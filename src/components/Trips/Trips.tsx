@@ -7,6 +7,7 @@ import { selectAllTrips, fetchTrips } from '../../features/trips/tripsSlice';
 import { useEffect, useState } from 'react';
 import  EditTrip from './EditTrip/EditTrip';
 import DeleteTrip from './DeleteTrip/DeleteTrip';
+import Draggable from 'react-draggable';
 
 
 const Trips = (props: any) => {

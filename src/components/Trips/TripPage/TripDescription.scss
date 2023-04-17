@@ -1,14 +1,30 @@
 @import '../../../variables.scss';
 
 .trip-description-container {
-    width: 800px;
+    width: 530px;
     height: 100%;
     background-color: $theme-grayish-violet;
     overflow-y: scroll;
-
+    flex-grow: 0;
+    flex-shrink: 0;
     header {
-        height: 20%;
+        height: 200px;
         background-image: linear-gradient(to right, #914BBC , #3986D5);
+
+        h1 {
+            display: flex;
+            background: none;
+            flex-direction: row;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 25px;
+            img {
+                width: 20px;
+                height: 20px;
+                margin: 0 10px 0 0;
+            }
+        }
     }
 
     #trip-description-content {
@@ -35,11 +51,8 @@
 
             }
             
-            .singletab:active {
-                background-color: white;
-            }
 
-            .singletab:focus {
+            .singletab[aria-selected="true"] {
                 background-color: white;
                 color: $theme-dark-violet;
                 font-weight: 700;

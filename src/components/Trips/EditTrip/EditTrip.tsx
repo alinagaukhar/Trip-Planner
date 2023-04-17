@@ -24,6 +24,7 @@ const EditTrip  = (props: any) => {
        if (trip) {
         dispatch(updateTrip({
             ...trip,
+            lastEdited: new Date().toLocaleString(),
             title
         }));
         }

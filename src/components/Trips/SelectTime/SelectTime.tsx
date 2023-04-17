@@ -60,7 +60,7 @@ const SelectTime  = (props: any) => {
                 places[i+1] = {...places[i+1], arrivalDate, departureDate: arrivalDate};
             }
 
-            dispatch(updateTrip({...trip, places}))
+            dispatch(updateTrip({...trip, places, lastEdited: new Date().toLocaleString()}))
         }
 
         props.hide(false);

@@ -79,7 +79,7 @@ class PlacePage extends React.Component<Props> {
         }
         return (
             <div id='place-container'>
-                <header>
+                <header id='pc-header'>
                     <div className='order'>{String.fromCharCode(65 + this.props.index)}</div>
                     <p> Starting from </p>
                     <button onClick={removeHandler}><img src={bucket}/></button>

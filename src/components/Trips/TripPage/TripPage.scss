@@ -1,8 +1,12 @@
 @import '../../../variables';
 
 .trip-page-container {
-    display: flex;
-    flex-direction: row;
     height: 100%;
     overflow-y: hidden;
+
+    .trip-page-content {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
 }

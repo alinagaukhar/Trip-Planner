@@ -6,6 +6,9 @@ import { useSelector } from 'react-redux';
 import { selectTripById } from '../../features/trips/tripsSlice';
 import { RootState } from '../../store/store';
 import { Link } from 'react-router-dom';
+import Draggable from 'react-draggable';
+import { parseISO, formatDistanceToNow } from 'date-fns'
+
 
 const SingleTrip = (props: any) => {
 
@@ -23,6 +26,7 @@ const SingleTrip = (props: any) => {
 
     if (trip) {
         return (
+            <Draggable axis="y">
             <div id="trip-container" style={props.style}>
                 <div id="places">
                     <p>{trip.numOfPlaces}</p>
@@ -40,9 +44,10 @@ const SingleTrip = (props: any) => {
                         Open
                     </Link>
                     </p>
-                    <p className="editted"><span>Edited: {trip.lastEdited}</span></p>
+                    <p className="editted"><span>Edited: {formatDistanceToNow(new Date(trip.lastEdited))}</span></p>
                 </div>
             </div>
+            </Draggable>
         )
     }
     else {

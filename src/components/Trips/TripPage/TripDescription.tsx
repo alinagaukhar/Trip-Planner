@@ -1,15 +1,24 @@
+import React from 'react';
 import './TripDescription.scss';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Box, Button, useTab, useMultiStyleConfig } from '@chakra-ui/react'
 import Plan from './Plan';
 import calendar from '../../../assets/calendar.svg';
 import todos from '../../../assets/todos.svg';
 import wallet from '../../../assets/wallet.svg';
+import { useSelector } from 'react-redux';
+import { selectTripById } from '../../../features/trips/tripsSlice';
+import { RootState } from '../../../store/store';
+import arrow from '../../../assets/arrow.svg';
+import { Link } from 'react-router-dom';
 
 
 const TripDescription = (props: any) => {
+    const trip = useSelector((state: RootState) => selectTripById(state, props.tripId))
+
     return (
         <div className='trip-description-container' >
             <header>
+                <h1><Link to="/main"><img src={arrow} alt='arrow'/></Link>{trip?.title}</h1>
             </header>
             <div id='trip-description-content'>
                 <Tabs className='tabs' variant='unstyled'>

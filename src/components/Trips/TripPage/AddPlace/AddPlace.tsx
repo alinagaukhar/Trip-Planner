@@ -48,14 +48,14 @@ const AddPlace  = (props: any) => {
                     const travelTime = legs[legs.length-1].time
                     const arrivalDate = addSeconds(new Date(places[places.length - 2].departureDate), travelTime).toLocaleString();
                     places[places.length - 1] = {...newPlace, arrivalDate, departureDate: arrivalDate}
-                    dispatch(updateTrip({...trip, route, places, numOfPlaces: places.length}))
+                    dispatch(updateTrip({...trip, route, places, numOfPlaces: places.length, lastEdited: new Date().toLocaleString()}))
                 }
                 else {
-                    dispatch(updateTrip({...trip, route, places, numOfPlaces: places.length}))
+                    dispatch(updateTrip({...trip, route, places, numOfPlaces: places.length, lastEdited: new Date().toLocaleString()}))
                 };
             }
             else {
-                dispatch(updateTrip( { ...trip,  places, numOfPlaces: places.length}))
+                dispatch(updateTrip( { ...trip,  places, numOfPlaces: places.length, lastEdited: new Date().toLocaleString()}))
             }
 
         }

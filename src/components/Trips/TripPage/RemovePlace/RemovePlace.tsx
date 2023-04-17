@@ -29,11 +29,12 @@ const RemovePlace  = (props: any) => {
                 const coordinates = places.map(place => place.coordinates) 
                 const res = await calculateRoutes(coordinates);
                 const route = JSON.stringify(res);
-                dispatch(updateTrip( { ...trip,  places, numOfPlaces: places.length, route}));
+                dispatch(updateTrip( { ...trip,  places, numOfPlaces: places.length, route, lastEdited: new Date().toLocaleString()}));
             }
             else {
-                dispatch(updateTrip( { ...trip,  places, numOfPlaces: places.length, route: null}));
+                dispatch(updateTrip( { ...trip,  places, numOfPlaces: places.length, route: null, lastEdited: new Date().toLocaleString()}));
             }
+            
 
         }
         props.showDelete(false);
@@ -48,6 +49,7 @@ const RemovePlace  = (props: any) => {
                 </header>
                 <div className='content'>
                     <p>Are you sure to remove this place from your trip?</p>
+                    <h1>{trip?.places[props.index].name}</h1>
                 </div>
                 <footer>
                     <button id='cancel' onClick={cancel}>Cancel</button>

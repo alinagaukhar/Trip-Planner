@@ -11,7 +11,7 @@ import CreateTrip from "../Trips/CreateTrip/CreateTrip";
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllTrips, fetchTrips, reset } from '../../features/trips/tripsSlice';
 import { RootState, AppDispatch } from '../../store/store';
-
+import lock from '../../assets/lock.svg';
 
 const Main = () => {
     const navigate = useNavigate();
@@ -53,12 +53,16 @@ const Main = () => {
 
     return (
         <div className="main-container">
-            {
-                showTab ?  <CreateTrip handler={setShowTab} /> : content 
-            }
-            <MyMap />
-            <button onClick={clickHandler}> Sign Out </button>
-            {/* {isLoggedIn ? <div>User logged in </div> : <></>} */}
+            <header className='main-header'>
+                <h1>RoutePlanGoha</h1>
+                <button onClick={clickHandler}><img src={lock} alt='lock'/><span>Sign Out</span></button>
+            </header>
+            <div className="main-content">
+                {
+                    showTab ?  <CreateTrip handler={setShowTab} /> : content 
+                }
+                <MyMap />
+            </div>
         </div>
     );
 };
