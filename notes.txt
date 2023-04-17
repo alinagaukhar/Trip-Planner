@@ -9,11 +9,10 @@ To-do
 
 2) verstka auth page
 3) View:
-    - add back to trip button from Plan
+
     - polish deleteplace container
-    - positioning of AddPlace, EditTrip, DeletePlace, etc...(should not change)
-    - tab when not clicked not white
-    - change edited date
+    - blur on place edit, delete
+    - bad at small screen size
 
 4) polish code 
     - add proper error handling and types
@@ -23,9 +22,9 @@ To-do
 
 More features
 
+* change trip orders done?
 * add to-dos
 * add place in the middle
-* change trip orders
 * add places photos
 * add categoris
 * add loading 
