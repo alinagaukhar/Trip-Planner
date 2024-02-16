@@ -1,9 +1,10 @@
 // Import the RTK Query methods from the React-specific entry point
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import { Trip } from "../trips/tripsSlice";
 import { db } from "../../utils/firestore";
+import { Trip } from "../trips/tripsSlice";
 
+/* test slice */
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fakeBaseQuery(),
