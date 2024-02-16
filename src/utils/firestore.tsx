@@ -1,14 +1,13 @@
 import { initializeApp } from "firebase/app";
 import {
-  getFirestore,
   collection,
-  setDoc,
-  doc,
-  getDoc,
-  getDocs,
-  query,
-  where,
   deleteDoc,
+  doc,
+  getDocs,
+  getFirestore,
+  query,
+  setDoc,
+  where,
 } from "firebase/firestore";
 import { Trip } from "../features/trips/tripsSlice";
 
@@ -27,7 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 // Add a new document with a generated id.
 export const addToDB = async (trip: Trip) => {
